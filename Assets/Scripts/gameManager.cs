@@ -9,6 +9,8 @@ public class gameManager : MonoBehaviour
 
     public int scoreAddition = 100;
 
+    public int scoreSubtraction = 10;
+
     public static gameManager instance;
 
     public GameObject score1;
@@ -28,6 +30,11 @@ public class gameManager : MonoBehaviour
     public void NoteHit()
     {
         currentScore += scoreAddition;
+        score1.gameObject.GetComponent<Text>().text = "Score: " + currentScore;
+    }
+    public void NoteMiss()
+    {
+        currentScore -= scoreSubtraction;
         score1.gameObject.GetComponent<Text>().text = "Score: " + currentScore;
     }
 }

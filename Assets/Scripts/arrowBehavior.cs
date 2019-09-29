@@ -39,6 +39,7 @@ public class arrowBehavior : MonoBehaviour
         if (collision.tag == "button")
         {
             pressed = false;
+            gameManager.instance.NoteMiss();
         }
     }
 }
