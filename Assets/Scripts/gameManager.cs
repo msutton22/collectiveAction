@@ -10,6 +10,7 @@ public class gameManager : MonoBehaviour
     public int scoreAddition = 100;
 
     public int scoreSubtraction = 10;
+    
 
     public static gameManager instance;
 
