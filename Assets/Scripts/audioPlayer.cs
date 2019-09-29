@@ -15,10 +15,10 @@ public class audioPlayer : MonoBehaviour
 
     void Update()
     {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                background.Play();
-            }
+           if (Input.GetKeyDown(KeyCode.Space))
+           {
+               background.Play();
+           }
         
     }
 }

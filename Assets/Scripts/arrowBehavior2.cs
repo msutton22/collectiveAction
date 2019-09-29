@@ -8,6 +8,8 @@ public class arrowBehavior2 : MonoBehaviour
     public bool pressed;
 
     public KeyCode key;
+    
+    public ParticleSystem particles;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class arrowBehavior2 : MonoBehaviour
         {
             if (pressed == true)
             {
+                particles.Play();
                 gameObject.SetActive(false);
                 gameManager2.instance2.NoteHit();
             }
