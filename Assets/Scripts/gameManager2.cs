@@ -15,10 +15,17 @@ public class gameManager2 : MonoBehaviour
 
     public static gameManager2 instance2;
 
+    public GameObject x;
+
     public GameObject score2;
+
+    public bool noteMiss = false;
+
+    public float time = 1f;
     // Start is called before the first frame update
     void Start()
     {
+       // x.SetActive(false);
         instance2 = this;
         score2.gameObject.GetComponent<Text>().text = "Score: " + currentScore;
     }
@@ -26,7 +33,22 @@ public class gameManager2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (noteMiss == true)
+        {
+            Debug.Log(time);
+            time -= Time.deltaTime;
+            x.SetActive(true);
+            if (time <= 0)
+            {
+                x.SetActive(false);
+                time = 1f;
+                noteMiss = false;
+            }
+        }
+        else
+        {
+            x.SetActive(false);
+        }
     }
 
     public void NoteHit()
@@ -40,5 +62,6 @@ public class gameManager2 : MonoBehaviour
         currentScore -= scoreSubtraction;
         score2.gameObject.GetComponent<Text>().text = "Score: " + currentScore;
         counter += 1;
+        noteMiss = true;
     }
 }
