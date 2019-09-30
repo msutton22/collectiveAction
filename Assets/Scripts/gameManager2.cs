@@ -35,7 +35,6 @@ public class gameManager2 : MonoBehaviour
     {
         if (noteMiss == true)
         {
-            Debug.Log(time);
             time -= Time.deltaTime;
             x.SetActive(true);
             if (time <= 0)

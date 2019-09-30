@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class mainBehavior : MonoBehaviour
 {
@@ -25,18 +26,23 @@ public class mainBehavior : MonoBehaviour
         {
             if (gameManager2.instance2.currentScore > gameManager.instance.currentScore)
             {
-                text = "Player 1 wins!";
+                text = "Player 1 wins! Press Space to start over!";
             }
             else if (gameManager2.instance2.currentScore < gameManager.instance.currentScore)
             {
-                text = "Player 2 wins!";
+                text = "Player 2 wins! Press Space to start over!";
             }
             else
             {
-                text = "It's a tie!";
+                text = "It's a tie! Press Space to start over!";
             }
             startText.gameObject.GetComponent<Text>().text = text;
             startText.SetActive(true);
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene("MainScene");
+            }
         }
         if (!started)
         {
